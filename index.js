@@ -1,10 +1,11 @@
 const express = require ('express');
 const app = express();
-const homeRouter = require ('./src/routes/homeRouter');
-const petsRouter = require('./src/routes/petsRouter');
+const homeRouter = require ('./SRC/routes/homeRouter');
+const petsRouter = require('./SRC/routes/petsRouter');
 
 app.set('view engine', 'ejs'); //Padrão express que já configura a pasta views;
-// app.set ('views', './views'); // Quando queremos mudar o nome da pasta;
+app.set ('views', 'SRC/views'); // Quando queremos mudar o nome da pasta;
+app.use(express.static('SRC/public'))
 
 app.use(homeRouter);
 app.use(petsRouter);
