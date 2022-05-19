@@ -28,6 +28,15 @@ const homeController = {
             }
         ]
         res.render ('home/servicos', {servico})
+    },
+    login: (req, res) => {
+        res.render('home/login')
+    },
+    cadastro: (req, res) => {
+        res.render('home/cadastro')
+    },
+    contato: (req, res) => {
+        res.render('home/contato')
     }
 }
 
