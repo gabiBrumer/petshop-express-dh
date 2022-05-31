@@ -1,16 +1,25 @@
 const express = require ('express');
 const app = express();
-const homeRouter = require ('./SRC/routes/homeRouter');
-const petsRouter = require('./SRC/routes/petsRouter');
+const homeRouter = require ('./src/routes/homeRouter');
+const petsRouter = require('./src/routes/petsRouter');
+const servicosRouter = require('./src/routes/servicosRouter');
+
+const methodOverride = require('method-override')
+app.use(methodOverride("_method"));
 
 app.set('view engine', 'ejs'); //Padrão express que já configura a pasta views;
-app.set ('views', 'SRC/views'); // Quando queremos mudar o nome da pasta;
-app.use(express.static('SRC/public'))
+app.set ('views', 'src/views'); // Quando queremos mudar o nome da pasta;
+app.use(express.static('public'))
 
 app.use(homeRouter);
 app.use(petsRouter);
+app.use(servicosRouter);
 
-app.listen(3000, () => console.log ('Rodando na porta 3000'))
+app.use((req, res) => {
+    return res.status(404).render ('not-found', {error: 'Página não encontrada!'})
+})
+
+app.listen(3000, () => console.log ('Rodando...'))
 
 /*
 GET - /pets - LISTAR todos os pets;

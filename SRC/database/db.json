@@ -1,0 +1,11 @@
+{
+    "servicos": [
+        {
+            "id": 2,
+            "nome": "consulta veterinária",
+            "preco": "R$ 250,00",
+            "imagem": "https://super.abril.com.br/wp-content/uploads/2017/10/porquinho.png",
+            "descricao": "lorem Ipsum dolor sit amet, consectetur adipiscing elit"
+        }
+    ]
+}

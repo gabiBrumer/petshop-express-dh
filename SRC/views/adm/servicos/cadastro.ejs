@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="/css/style.css">
+
+<%- include('../../partials/head') %>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<body>
+
+  <%- include('../../partials/header') %>
+
+  <main>
+
+    <form action="/servicos/adm/cadastrar" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="name">Nome: </label>
+        <input type="text" name="nome" class="form-control" id= "name" placeholder="Nome">
+      </div>
+
+      <div class="form-group">
+        <label for="preco">Preço: </label>
+        <input type="number" name="preco" class="form-control" id= "preco" placeholder="Valor">
+      </div>
+
+      <div class="form-group">
+        <label for="Descricao">Imagem: </label>
+        <input type="file" name="imagem" class="form-control" id= "imagem" placeholder="Valor">
+        <input type="text" name="imagem" class="form-control" id= "imagem" placeholder="Valor">
+      </div>
+
+      <div class="form-group">
+        <label for="descricao">Descrição: </label>
+        <textarea name="descricao" class="form-control" id= "descricao" placeholder="Valor"></textarea>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Enviar</button>
+      <a href="/servicos/adm/servicos" class="btn btn-primary">Voltar</a>
+    </form>
+
+  </main>
+
+  <%- include('../../partials/footer') %>
+
+</body>
+
+</html>
