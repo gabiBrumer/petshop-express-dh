@@ -3,6 +3,7 @@ const app = express();
 const homeRouter = require ('./src/routes/homeRouter');
 const petsRouter = require('./src/routes/petsRouter');
 const servicosRouter = require('./src/routes/servicosRouter');
+const requisicoesLog = require ('./src/middleware/requisicoesLog')
 
 const methodOverride = require('method-override')
 app.use(methodOverride("_method"));
@@ -10,6 +11,8 @@ app.use(methodOverride("_method"));
 app.set('view engine', 'ejs'); //Padrão express que já configura a pasta views;
 app.set ('views', 'src/views'); // Quando queremos mudar o nome da pasta;
 app.use(express.static('public'))
+
+app.use(requisicoesLog);
 
 app.use(homeRouter);
 app.use(petsRouter);
